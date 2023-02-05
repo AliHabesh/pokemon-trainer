@@ -1,0 +1,20 @@
+<form
+  #loginForm="ngForm"
+  (ngSubmit)="loginSubmit(loginForm)"
+  class="p-6 rounded-lg mx-auto w-full"
+>
+  <div class="w-full mx-auto flex justify-center">
+    <input
+      class="w-1/2 h-20 p-2 bg-gray-200 rounded-3xl flex flex-row"
+      ngModel
+      #username="ngModel"
+      id="username"
+      name="username"
+      type="text"
+      placeholder="username..."
+    />
+    <button type="submit" class="ml-2 bg-slate-600 rounded-full h-20 w-20">
+      <img src="assets/images/pokemonBall.png" alt="image of pokemon ball" />
+    </button>
+  </div>
+</form>
