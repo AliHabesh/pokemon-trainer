@@ -10,7 +10,6 @@ export class LoginPage {
   constructor(private readonly router: Router) {}
 
   handleLogin(): void {
-    console.log('testing handle login');
     this.router.navigateByUrl('/pokemon-catalouge');
   }
 }
