@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { finalize } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
-const { apiPokemons } = environment;
+const { apiPokemons, apiTrainersUrl } = environment;
 @Injectable({
   providedIn: 'root',
 })
@@ -30,17 +30,31 @@ export class PokemonCatalougeService {
       .get<any>('https://pokeapi.co/api/v2/pokemon')
       .subscribe((data) => {
         data.results.forEach(
-          (pokemon: {
-            name: string;
-            url: string;
-            id: any;
-            image: any;
-            captured: boolean;
-          }) => {
+          (
+            pokemon: {
+              name: string;
+              url: string;
+              id: any;
+              image: any;
+              captured: boolean;
+            },
+            index: number
+          ) => {
+            pokemon.id = index + 1;
             this._pokemons.push(pokemon);
-            console.log(pokemon.name + ' URL: ' + pokemon.url);
           }
         );
       });
+  }
+
+  public capturePokemon(pokemon: Pokemon) {
+    this.http.post<any>(apiTrainersUrl, pokemon).subscribe((response) => {
+      console.log('The response from capturing pokemon: \n' + response);
+    });
+  }
+
+  public pokemonById(id: string): string | undefined {
+    const poke = this._pokemons.find((pokemon: Pokemon) => pokemon.id === id);
+    return poke?.name;
   }
 }

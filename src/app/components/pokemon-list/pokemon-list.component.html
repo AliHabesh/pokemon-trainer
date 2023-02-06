@@ -1,6 +1,28 @@
-<div class="flex flex-wrap h-full w-full" *ngFor="let pokemon of pokemons">
-  <div class="h-1/2 w-1/2 bg-blue-400 rounded-3xl drop-shadow-xl p-2">
-    <img src="" alt="" />
-    {{ pokemon.name }}
+<div class="flex flex-row flex-wrap">
+  <div
+    class="h-full w-full flex justify-center"
+    *ngFor="let pokemon of pokemons"
+  >
+    <div class="h-1/2 w-1/2 m-10 bg-blue-400 rounded-3xl drop-shadow-xl p-2">
+      <p class="text-3xl flex justify-center font-mono antialiased font-bold">
+        {{ pokemon.name }} {{ pokemon.id }}
+      </p>
+      <div class="flex flex-row justify-between">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+            pokemon.id
+          }}.png"
+          class="h-56 w-56"
+          alt=""
+        />
+        <button class="rounded-full" (click)="sendApiRequest(pokemon.id)">
+          <img
+            src="assets/images/pokemonBall.png"
+            class="h-32 w-30 pr-10"
+            alt="Capture"
+          />
+        </button>
+      </div>
+    </div>
   </div>
 </div>
