@@ -44,6 +44,7 @@ export class CaptureService {
           }
         )
         .subscribe((data) => {});
+      this.userService.user = user;
     } else {
       alert('Pokemon is undefined in capture service');
     }

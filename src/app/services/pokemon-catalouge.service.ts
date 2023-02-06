@@ -47,12 +47,6 @@ export class PokemonCatalougeService {
       });
   }
 
-  public capturePokemon(pokemon: Pokemon) {
-    this.http.post<any>(apiTrainersUrl, pokemon).subscribe((response) => {
-      console.log('The response from capturing pokemon: \n' + response);
-    });
-  }
-
   public pokemonById(id: string): string | undefined {
     const poke = this._pokemons.find((pokemon: Pokemon) => pokemon.id === id);
     return poke?.name;
