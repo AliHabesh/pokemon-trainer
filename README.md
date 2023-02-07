@@ -1,27 +1,15 @@
-# PokemonTrainer
+# [Vercel Link: Lost In Translation](https://pokemon-trainer-seven.vercel.app/)
+#### Pokemon Trainer is an application which displays pokemons in a catalouge, the user can capture a pokemon and store the pokemon into the users list.
+#### Each pokemon will be represented with a name and an Avatar image. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+# The application:  
+#### • Login page
+![Login Page Image](https://res.cloudinary.com/dscdruvga/image/upload/v1675806330/pokLog_n6xkr0.png)
+#### • Pokemon Catalouge page 
+![Pokemon Cataloug Image](https://res.cloudinary.com/dscdruvga/image/upload/v1675806320/Cat_tmupcu.png)
+#### • Profile Trainer page
+![Pokemon Cataloug Image](https://res.cloudinary.com/dscdruvga/image/upload/v1675806308/trainer_mubil2.png)
+#### • Profile Trainer page
+![Pokemon Component Tree](https://res.cloudinary.com/dscdruvga/image/upload/v1675806102/fig_rrd26h.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
