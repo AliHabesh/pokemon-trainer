@@ -26,6 +26,15 @@ export class CaptureService {
     const pokemon: string | undefined =
       this.pokemonService.pokemonById(pokemonId);
 
+    user.pokemons.forEach((element) => {
+      if (element === pokemon) {
+        alert('You have already captured this pokemon!');
+        return;
+      } else {
+        alert('Captured pokemon: ' + pokemon);
+      }
+    });
+
     const headers = new HttpHeaders({
       'content-type': 'application/json',
       'x-api-key': apiKey,
@@ -51,7 +60,6 @@ export class CaptureService {
   }
 
   public releasePokemon(pokemonName: string): void {
-    console.log('Line 54');
     if (!this.userService.user) {
       throw new Error('You cant release pokemon, user not found!!');
     }
@@ -78,9 +86,7 @@ export class CaptureService {
           headers,
         }
       )
-      .subscribe((data) => {
-        console.log('Response from release: ' + data);
-      });
+      .subscribe((data) => {});
     this.userService.user = user;
   }
 }
