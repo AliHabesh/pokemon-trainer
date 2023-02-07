@@ -19,6 +19,8 @@ export class UserService {
     this._user = user;
   }
 
+  public releasePokemonFromUserList(): void {}
+
   constructor() {
     this._user = StorageUtil.storageRead<User>(StorageKeys.User);
   }
