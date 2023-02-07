@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { User } from 'src/app/models/user.model';
+import { PokemonCatalougeService } from 'src/app/services/pokemon-catalouge.service';
+import { ProfileService } from 'src/app/services/profile.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,17 +10,24 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './trainer.page.html',
   styleUrls: ['./trainer.page.css'],
 })
-export class TrainerPage {
+export class TrainerPage implements OnInit {
   get user(): User | undefined {
     return this.userService.user;
   }
 
   get capturedPokemons(): Pokemon[] {
     if (this.userService.user) {
-      return this.userService.user.pokemons;
+      return this.profileService.capturedPokemonList;
     }
     return [];
   }
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private profileService: ProfileService,
+    private pokemonService: PokemonCatalougeService
+  ) {}
+  ngOnInit(): void {
+    this.pokemonService.findAllPokemons();
+  }
 }
