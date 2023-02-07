@@ -9,7 +9,7 @@
 ![Pokemon Cataloug Image](https://res.cloudinary.com/dscdruvga/image/upload/v1675806320/Cat_tmupcu.png)
 #### • Profile Trainer page
 ![Pokemon Cataloug Image](https://res.cloudinary.com/dscdruvga/image/upload/v1675806308/trainer_mubil2.png)
-#### • Profile Trainer page
+#### • Pokemon Component Tree
 ![Pokemon Component Tree](https://res.cloudinary.com/dscdruvga/image/upload/v1675806102/fig_rrd26h.png)
 
 
