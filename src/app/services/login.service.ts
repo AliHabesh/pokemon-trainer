@@ -12,6 +12,7 @@ const trainerApiUrl = environment.apiTrainersUrl;
 export class LoginService {
   constructor(private readonly http: HttpClient) {}
 
+  //Handles login functionality
   public login(username: String): Observable<User | undefined> {
     return this.checkUsername(username).pipe(
       switchMap((user: User | undefined) => {
@@ -23,13 +24,14 @@ export class LoginService {
       })
     );
   }
-
+  //Checks if the username exists in the API
   private checkUsername(username: String): Observable<User | undefined> {
     return this.http
       .get<User[]>(`${trainerApiUrl}?username=${username}`)
       .pipe(map((response: User[]) => response.pop()));
   }
 
+  //Creates user, if user doesnt exist
   private createUser(username: String): Observable<User> {
     const user = {
       username,

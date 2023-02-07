@@ -9,8 +9,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  [x: string]: any;
-
   constructor(
     private readonly router: Router,
     private user: UserService,

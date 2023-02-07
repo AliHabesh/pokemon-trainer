@@ -7,17 +7,14 @@ import { CaptureService } from 'src/app/services/capture.service';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css'],
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonListComponent {
   @Input() pokemons: Pokemon[] = [];
   //@Input() pokemonId: string = '';
 
   constructor(private readonly captureService: CaptureService) {}
 
   public sendApiRequest(pokemon: any): void {
-    alert('Captured pokemon: ' + pokemon);
     //send request
     this.captureService.capturePokemon(pokemon);
   }
-
-  ngOnInit(): void {}
 }

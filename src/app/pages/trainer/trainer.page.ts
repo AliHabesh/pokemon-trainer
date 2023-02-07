@@ -11,10 +11,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./trainer.page.css'],
 })
 export class TrainerPage implements OnInit {
+  //Retrieves a User, which contains all the info regarding the user
   get user(): User | undefined {
     return this.userService.user;
   }
 
+  //Returns a list of captured pokemon for the specific user
   get capturedPokemons(): Pokemon[] {
     if (this.userService.user) {
       return this.profileService.capturedPokemonList;
@@ -27,6 +29,8 @@ export class TrainerPage implements OnInit {
     private profileService: ProfileService,
     private pokemonService: PokemonCatalougeService
   ) {}
+
+  //Retrieves all the pokemons on initialization
   ngOnInit(): void {
     this.pokemonService.findAllPokemons();
   }

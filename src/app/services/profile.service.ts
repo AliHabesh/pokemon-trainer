@@ -41,6 +41,7 @@ export class ProfileService {
     });
   }
 
+  //Generates a list of pokemons based on what the user have captured
   public filterThroughAndGenerateListOfPokemons(
     pokemonList: string[] | undefined
   ): Pokemon[] {

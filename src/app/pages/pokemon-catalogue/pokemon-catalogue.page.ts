@@ -23,6 +23,7 @@ export class PokemonCataloguePage implements OnInit {
     private readonly pokemonCatalougeService: PokemonCatalougeService
   ) {}
 
+  //Retrieves all the available pokemons to the catalouge page on initialization
   ngOnInit(): void {
     this.pokemonCatalougeService.findAllPokemons();
   }

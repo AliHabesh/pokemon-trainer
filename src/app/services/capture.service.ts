@@ -15,7 +15,7 @@ export class CaptureService {
     private readonly http: HttpClient,
     private readonly pokemonService: PokemonCatalougeService
   ) {}
-
+  //Sends a Patch request to update the Pokemon list (adding a captured pokemon)
   public capturePokemon(pokemonId: string): void {
     if (!this.userService.user) {
       throw new Error('You cant capture pokemon, user not found!!');
@@ -59,6 +59,7 @@ export class CaptureService {
     }
   }
 
+  //Sends a Patch request to update the Pokemon list (removing a captured pokemon)
   public releasePokemon(pokemonName: string): void {
     if (!this.userService.user) {
       throw new Error('You cant release pokemon, user not found!!');
@@ -74,8 +75,6 @@ export class CaptureService {
       'content-type': 'application/json',
       'x-api-key': apiKey,
     });
-    console.log('THE USER ID: ' + user.id);
-
     this.http
       .patch(
         `${apiTrainersUrl}/${user.id}`,

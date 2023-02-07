@@ -18,11 +18,11 @@ export class LoginFormComponent {
     private readonly userService: UserService
   ) {}
 
+  //For the login form, this handles the data that will be recieved from the login page (username)
   public loginSubmit(loginForm: NgForm): void {
     const pattern = /^[a-zA-Z]+$/;
     const { username } = loginForm.value;
     const isValid = pattern.test(username);
-    console.log(username);
     if (username === '') {
       alert('You must input characters, empty field is invalid!');
       return;

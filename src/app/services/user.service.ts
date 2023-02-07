@@ -13,18 +13,17 @@ export class UserService {
   get user(): User | undefined {
     return this._user;
   }
-
+  //Sets a user in the SessionStorage
   set user(user: User | undefined) {
     StorageUtil.storageSave<User>(StorageKeys.User, user!);
     this._user = user;
   }
 
-  public releasePokemonFromUserList(): void {}
-
   constructor() {
     this._user = StorageUtil.storageRead<User>(StorageKeys.User);
   }
 
+  //Checks if the pokemons has been captured, returns the boolean value
   public captured(pokemonId: string): boolean {
     if (this._user) {
       return this.user?.pokemons.find(
