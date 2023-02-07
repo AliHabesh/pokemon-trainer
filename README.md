@@ -1,6 +1,6 @@
 # [Vercel Link: Pokemon Trainer ](https://pokemon-trainer-seven.vercel.app/)
 #### Pokemon Trainer is an application which displays pokemons in a catalouge, the user can capture a pokemon and store the pokemon into the users list.
-#### Each pokemon will be represented with a name and an Avatar image. 
+#### Each pokemon will be represented with a name and an avatar image. 
 
 # The application:  
 #### • Login page
